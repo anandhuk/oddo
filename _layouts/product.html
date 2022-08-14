@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+<link rel="stylesheet" href="/css/product.css">
+
+<body>
+    {% include navbar.html %}
+    <!-- <div class="fixed-side-navbar">
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#home"><span>Intro</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#services"><span>Services</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio"><span>Portfolio</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#our-story"><span>Our Story</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact-us"><span>Contact Us</span></a></li>
+        </ul>
+    </div> -->
+    <div class="container">
+        <div class="row product-end-wrap">
+        {%- for product in site.data.products -%}
+            <div class="col-md-4 product-wrap" onclick="location.href='/products/details/{{ product.linkname }}'">
+                <div class="card">
+                    <img class="card-img-top" src="/images/{{product.img[0].src}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ product.prodname }}</h3>
+                        <p class="card-text">{{ product.des | truncatewords: 20 }}</p>
+                    </div>
+                </div>
+            </div>
+        {%- endfor -%}
+        </div>
+    </div>
+    {% include footer.html %}
+</body>

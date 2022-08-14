@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+<link rel="stylesheet" href="/css/product.css">
+
+
+<body>
+    {% include navbar.html %}
+
+    <div class="container">
+        <div class="row product-details-wrap">
+            <div class="col-md-6">
+                <div class="carousel">
+                    <div class="slides" id="slides">
+                        {%- for image in page.img -%}
+                        <img src="/images/{{ image.src }}" alt="{{image.alt}}" class="slide"> {%- endfor -%}
+                    </div>
+                    <div class="controls">
+                        <div class="control prev-slide">&#9668;</div>
+                        <div class="control next-slide">&#9658;</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-body product-details">
+                    <h2 class="card-title">{{ page.prodname }}</h2>
+                    <p class="card-text">{{ page.des }}</p>
+                    <h4 class="features">FEATURES</h4>
+                    <ul class="features-list">
+                        {%- for FEATURES in page.FEATURES -%}
+                        <li>{{FEATURES}}</li>
+                        {%- endfor -%}
+
+                    </ul>
+                    {%- if page.des2 -%}
+                    <p class="card-text">{{ page.des2 }}</p>
+                    {%- endif -%}
+                    <h4 class="direction">DIRECTION</h4>
+                    <ol class="direction-list">
+                        {%- for DIRECTION in page.DIRECTION -%}
+                        <li>{{DIRECTION}}</li>
+                        {%- endfor -%}
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row product-list">
+            <div class="col-md-12 related-products">
+                <h2 class="related-products-title">Related Products</h2>
+
+                <div class="parallax-content projects-content" id="portfolio">
+                    <div class="col-md-12">
+                        <div id="owl-testimonials-prd" class="owl-carousel owl-theme">
+                            {%- for product in site.data.products -%}
+                                <div class="item">
+                                    <div class="product-wrap" onclick="location.href='/products/details/{{ product.linkname }}'">
+                                        <div class="card">
+                                            <img class="card-img-top" src="/images/{{product.img[0].src}}" alt="Card image cap">
+                                            <div class="card-body">
+                                                <h3 class="card-title">{{ product.prodname }}</h3>
+                                                <p class="card-text">{{ product.des | truncatewords: 20 }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {%- endfor -%}
+                        </div>
+                    </div>
+                </div>
+            
+
+            </div>
+        </div>
+    </div>
+   {% include footer.html %}
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+</script>
+<script src="/js/product.js"></script>
+<script src="/js/vendor/bootstrap.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/main.js"></script>
