@@ -1,0 +1,51 @@
+.card-body { text-align: center; }
+
+.product-wrap { padding-top: 2.5rem; }
+
+.product-end-wrap { padding-bottom: 2.5rem; }
+
+.card-title { font-weight: bold; }
+
+.carousel { width: 29vw; height: 450px; border-radius: 3px; overflow: hidden; position: relative; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); }
+
+.carousel:hover .controls { opacity: 1; }
+
+.carousel .controls { opacity: 0; display: flex; position: absolute; top: 50%; left: 0; justify-content: space-between; width: 100%; z-index: 99999; transition: all ease 0.5s; }
+
+.carousel .controls .control { margin: 0 5px; display: flex; align-items: center; justify-content: center; height: 40px; width: 40px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.7); opacity: .5; transition: ease .3s; cursor: pointer; }
+
+.carousel .controls .control:hover { opacity: 1; }
+
+.carousel .slides { position: absolute; top: 50%; left: 0; transform: translateY(-50%); display: flex; width: 100%; transition: 1s ease-in-out all; }
+
+.carousel .slides .slide { min-width: 100%; min-height: 450px; height: auto; }
+
+.product-details-wrap { padding-top: 2.5rem; }
+
+.product-details { padding-top: 2.5rem; }
+
+.product-details .card-title { font-size: 3.5rem; color: black; }
+
+.product-details .card-text { color: black; padding-top: 1rem; padding-bottom: 1rem; text-align: left; }
+
+.product-details .features { color: black; padding-top: 1rem; padding-bottom: 1rem; text-align: left; }
+
+.product-details .features-list { color: black; padding-top: 1rem; padding-bottom: 1rem; text-align: left; }
+
+.product-details .direction { color: black; padding-top: 1rem; padding-bottom: 1rem; text-align: left; }
+
+.product-details .direction-list { color: black; padding-top: 1rem; padding-bottom: 1rem; text-align: left; }
+
+.product-list { padding-top: 2.5rem; }
+
+.product-list .product-wrap { padding-top: 0; }
+
+.product-list .projects-content { padding-top: 10vh; background-color: white; background-image: none; }
+
+.related-products { color: black; text-align: center; }
+
+.projects-content { background-color: white; }
+
+.related-products-title { color: black; font-size: 3.5rem; }
+
+/*# sourceMappingURL=product.css.map */
